@@ -1,0 +1,53 @@
+const NodeRSA = require("node-rsa");
+const { v4: uuidv4 } = require('uuid');
+
+let responseObject = {
+ headers: null
+ //to debug any issues from UI
+ //errors:[]
+};
+
+const getSignature = (privateKeyString, consumerId, keyVersion, timeStamp)=>{
+ try{
+ const keyToBeSigned = `${consumerId}\n${timeStamp}\n${keyVersion}\n`;
+ const privateKey = new NodeRSA();
+ privateKey.importKey(privateKeyString, "pkcs8-private-pem");
+ //sign the string
+ const signatureBuffer = privateKey.sign(keyToBeSigned, "base64");
+ console.log('### signed key ####');
+ console.log(signatureBuffer.toString());
+
+ console.log('### Epoch ####');
+ console.log(timeStamp.toString());
+ return signatureBuffer.toString();
+ }catch(e){
+ console.log(e.toString());
+ //responseObject.errors.push(e.toString());
+ }
+}
+
+const getRequestHeaders = (context)=>{
+ try{
+ const unixEpoch = Date.now();
+ const signature = getSignature(context['privateKey'], context['consumerId'], context['keyVersion'], unixEpoch);
+ console.log()
+ const headers = {
+ 'Accept':'application/json','Content-Type':'application/json',
+ 'WM_CONSUMER.ID':context['consumerId'],
+ 'WM_CONSUMER.INTIMESTAMP':unixEpoch.toString(),
+ 'WM_SEC.AUTH_SIGNATURE':signature,
+ 'WM_SEC.KEY_VERSION':context['keyVersion'],
+ 'WM_SVC.ENV':context['wmSvcEnv'],
+ 'WM_SVC.NAME':context['wmSvcName']
+ }
+ return headers;
+ }catch(e){
+ console.log(e.toString());
+ //responseObject.errors.push(e.toString());
+ }
+}
+
+process.on('message', (message)=>{
+ responseObject.headers = JSON.stringify(getRequestHeaders(message));
+ process.send(responseObject);
+});
