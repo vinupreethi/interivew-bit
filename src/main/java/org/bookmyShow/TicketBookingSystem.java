@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TicketBookingSystem implements TicketBooking {
-    PaymentService payment;
+
     BookMyShowApp bookMyShowApp;
     User user;
 
