@@ -1,19 +1,18 @@
 package org.example;
 
 public class MaxChunks {
-    public static void main(String args[])
-    {
-        int arr[]={4,3,2,1,0};
-        int minim=Integer.MAX_VALUE;
-        int min_index=0;
-        for(int i=0;i<arr.length;i++)
-        {
-            if(minim>=arr[i]) {
-                minim = arr[i];
-                min_index=i;
-            }
+    public static void main(String args[]) {
+        int arr[] = {1, 0, 2, 3, 4};
+        int maxim = arr[0];
+        int cnt=0;
+        for (int i = 0; i < arr.length; i++) {
+
+            maxim=Math.max(maxim,arr[i]);
+            if(maxim==i)
+                cnt++;
+
+
         }
-        System.out.println(min_index);
-        System.out.println(minim);
+        System.out.println(cnt);
     }
 }

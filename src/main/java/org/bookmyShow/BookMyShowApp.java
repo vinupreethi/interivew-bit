@@ -16,6 +16,7 @@ public class BookMyShowApp {
         User user = new User(username, password);
         if (saveToDb(user)) {
             System.out.println("UserName already exists..! Try with different username..");
+            userList.add(user);
         } else
             System.out.println("User registered successfully..");
 
