@@ -1,5 +1,10 @@
-package org.Ecommerce;
+package org.Ecommerce.models;
 
+
+import org.Ecommerce.Constants.OrderStatus;
+import org.Ecommerce.Constants.PaymentMode;
+import org.Ecommerce.services.Buyer;
+import org.Ecommerce.services.Seller;
 
 import java.util.List;
 import java.util.Scanner;
@@ -114,10 +119,5 @@ public class Product {
 
 
 
-    public void addRating(Product product) {
-        Scanner scanner=new Scanner(System.in);
-        System.out.println("Enter the rating");
-        float rating=scanner.nextFloat();
-        product.setRating(rating);
-    }
+
 }

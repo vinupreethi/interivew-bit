@@ -1,4 +1,4 @@
-package org.Ecommerce;
+package org.Ecommerce.payments;
 
 import java.util.Scanner;
 

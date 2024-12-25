@@ -1,6 +1,9 @@
-package org.Ecommerce;
+package org.Ecommerce.payments;
 
-public class UPIPaymentService implements PaymentService{
+import org.Ecommerce.exception.InSufficientBalanceException;
+import org.Ecommerce.models.Account;
+
+public class UPIPaymentService implements PaymentService {
     private String cardNumber;
     private String cardHolderName;
     private String expirationDate;

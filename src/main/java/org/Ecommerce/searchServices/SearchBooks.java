@@ -1,54 +1,58 @@
-package org.Ecommerce;
+package org.Ecommerce.searchServices;
+
+import org.Ecommerce.models.Product;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class SearchHealthProducts implements Search {
-    List<Product> healthList=new ArrayList<>();
+public class SearchBooks implements Search {
+    List<Product> bookList = new ArrayList<>();
+
     @Override
     public List<Product> sortByLowToHighPrice() {
-        Collections.sort(healthList, new Comparator<Product>() {
+        Collections.sort(bookList, new Comparator<Product>() {
             @Override
             public int compare(Product o1, Product o2) {
                 return o1.getPrice() - o2.getPrice();
             }
         });
-        return  healthList;
+        return bookList;
     }
 
     @Override
     public List<Product> sortByHighToLowPrice() {
-        Collections.sort(healthList, new Comparator<Product>() {
+        Collections.sort(bookList, new Comparator<Product>() {
             @Override
             public int compare(Product o1, Product o2) {
                 return o2.getPrice() - o1.getPrice();
             }
         });
-        return  healthList;
+        return bookList;
     }
 
     @Override
     public List<Product> sortByBrand() {
-        Collections.sort(healthList, new Comparator<Product>() {
-            @Override
-            public int compare(Product o1, Product o2) {
-                return o1.getBrand().compareTo(o2.getBrand());
-            }
-        });
-        return  healthList;
+        Collections.sort(bookList, new Comparator<Product>() {
 
+            @Override
+            public int compare(Product product1, Product product2) {
+                return product1.getBrand().compareTo(product2.getBrand());
+            }
+
+        });
+        return bookList;
     }
 
     @Override
     public List<Product> sortByCustomerReviews() {
-        Collections.sort(healthList, new Comparator<Product>() {
+        Collections.sort(bookList, new Comparator<Product>() {
             @Override
             public int compare(Product o1, Product o2) {
                 return (int) (o1.getRating() - o2.getRating());
             }
         });
-        return  healthList;
+        return bookList;
     }
 }

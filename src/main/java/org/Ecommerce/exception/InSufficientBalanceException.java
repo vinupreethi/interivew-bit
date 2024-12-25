@@ -1,7 +1,7 @@
-package org.Ecommerce;
+package org.Ecommerce.exception;
 
 public class InSufficientBalanceException extends Exception {
-    InSufficientBalanceException(String message)
+    public InSufficientBalanceException(String message)
     {
         super(message);
     }

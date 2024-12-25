@@ -1,4 +1,9 @@
-package org.Ecommerce;
+package org.Ecommerce.services;
+
+import org.Ecommerce.Constants.OrderStatus;
+import org.Ecommerce.models.Account;
+import org.Ecommerce.models.Address;
+import org.Ecommerce.models.Product;
 
 import java.util.List;
 import java.util.Random;
@@ -10,7 +15,6 @@ public class EcommerceWebSite {
     List<Buyer> activebuyerList;
     List<Seller> sellerList;
     List<Seller> activesellerList;
-    List<Product> productList;
 
     public List<Seller> getSellerList() {
         return sellerList;
@@ -193,5 +197,11 @@ public class EcommerceWebSite {
         product.setOrderStatus(OrderStatus.CANCELLED);
     }
 
+    public void addRating(Product product) {
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("Enter the rating");
+        float rating=scanner.nextFloat();
+        product.setRating(rating);
+    }
 
 }

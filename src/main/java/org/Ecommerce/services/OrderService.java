@@ -1,4 +1,7 @@
-package org.Ecommerce;
+package org.Ecommerce.services;
+
+import org.Ecommerce.Constants.OrderStatus;
+import org.Ecommerce.models.Product;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,11 +33,9 @@ public class OrderService {
         }
     }
 
-    public void TrackOrder(List<Product> productList)
-    {
-        for(Product product:productList)
-        {
-            System.out.println(product.getProductName()+" "+product.getOrderStatus());
+    public void TrackOrder(List<Product> productList) {
+        for (Product product : productList) {
+            System.out.println(product.getProductName() + " " + product.getOrderStatus());
         }
     }
 

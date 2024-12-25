@@ -1,4 +1,7 @@
-package org.Ecommerce;
+package org.Ecommerce.services;
+
+import org.Ecommerce.exception.InSufficientBalanceException;
+import org.Ecommerce.models.Product;
 
 import java.util.List;
 

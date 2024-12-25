@@ -1,36 +1,39 @@
-package org.Ecommerce;
+package org.Ecommerce.searchServices;
 
-import java.awt.print.Book;
-import java.util.*;
+import org.Ecommerce.models.Product;
 
-public class SearchBooks implements Search {
-    List<Product> bookList = new ArrayList<>();
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
+public class SearchElectronics implements Search {
+    List<Product> electronicsList=new ArrayList<>();
     @Override
     public List<Product> sortByLowToHighPrice() {
-        Collections.sort(bookList, new Comparator<Product>() {
+        Collections.sort( electronicsList, new Comparator<Product>() {
             @Override
             public int compare(Product o1, Product o2) {
                 return o1.getPrice() - o2.getPrice();
             }
         });
-        return bookList;
+        return  electronicsList;
     }
 
     @Override
     public List<Product> sortByHighToLowPrice() {
-        Collections.sort(bookList, new Comparator<Product>() {
+        Collections.sort( electronicsList, new Comparator<Product>() {
             @Override
             public int compare(Product o1, Product o2) {
                 return o2.getPrice() - o1.getPrice();
             }
         });
-        return bookList;
+        return  electronicsList;
     }
 
     @Override
     public List<Product> sortByBrand() {
-        Collections.sort(bookList, new Comparator<Product>() {
+        Collections.sort(electronicsList, new Comparator<Product>() {
 
             @Override
             public int compare(Product product1, Product product2) {
@@ -38,17 +41,18 @@ public class SearchBooks implements Search {
             }
 
         });
-        return bookList;
+        return electronicsList;
+
     }
 
     @Override
     public List<Product> sortByCustomerReviews() {
-        Collections.sort(bookList, new Comparator<Product>() {
+        Collections.sort(electronicsList, new Comparator<Product>() {
             @Override
             public int compare(Product o1, Product o2) {
                 return (int) (o1.getRating() - o2.getRating());
             }
         });
-        return bookList;
+        return electronicsList;
     }
 }

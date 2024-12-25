@@ -1,4 +1,4 @@
-package org.Ecommerce;
+package org.Ecommerce.models;
 
 public class Address {
 

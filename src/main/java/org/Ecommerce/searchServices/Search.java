@@ -1,4 +1,6 @@
-package org.Ecommerce;
+package org.Ecommerce.searchServices;
+
+import org.Ecommerce.models.Product;
 
 import java.util.List;
 

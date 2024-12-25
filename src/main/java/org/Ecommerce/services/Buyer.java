@@ -1,4 +1,14 @@
-package org.Ecommerce;
+package org.Ecommerce.services;
+
+import org.Ecommerce.Constants.OrderStatus;
+import org.Ecommerce.Constants.PaymentMode;
+import org.Ecommerce.exception.InSufficientBalanceException;
+import org.Ecommerce.models.Account;
+import org.Ecommerce.models.Address;
+import org.Ecommerce.models.Product;
+import org.Ecommerce.payments.*;
+import org.Ecommerce.searchServices.*;
+
 
 import java.util.List;
 import java.util.Scanner;
@@ -12,8 +22,8 @@ public class Buyer {
     private String phoneNumber;
     private String emailId;
     private Address address;
-    private Search search;
     private Cart cart;
+    private Search search;
     private PaymentService paymentService;
     private OrderService order;
     private DeliveryAgent deliveryAgent;
@@ -92,27 +102,35 @@ public class Buyer {
         System.out.println("6. Home and kitchen");
         System.out.println("7. Search by product name");
         int options = scanner.nextInt();
+        Search search;
         switch (options) {
             case 1:
                 search = new SearchClothingProducts();
+                search.sortByBrand();
                 break;
             case 2:
-                search = new SearchHealthProducts();
+                search =  new SearchHealthProducts();
+                search.sortByLowToHighPrice();
                 break;
             case 3:
-                search = new SearchBooks();
+                search =  new SearchBooks();
+                search.sortByCustomerReviews();
                 break;
             case 4:
                 search = new SearchFurniture();
+                search.sortByCustomerReviews();
                 break;
             case 5:
                 search = new SearchElectronics();
+                search.sortByBrand();
                 break;
             case 6:
-                search = new SearchHomeAndKitchenProducts();
+                search =  new SearchHomeAndKitchenProducts();
+                search.sortByLowToHighPrice();
                 break;
             case 7:
-                search = new GeneralCategory();
+                search =  new GeneralCategory();
+                search.sortByLowToHighPrice();
 
 
         }
