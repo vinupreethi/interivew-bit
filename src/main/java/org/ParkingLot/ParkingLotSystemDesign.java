@@ -1,5 +1,7 @@
-/*
+
 package org.ParkingLot;
+
+import org.ParkingLot.model.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,4 +21,4 @@ public class ParkingLotSystemDesign {
 
     }
 }
-*/
+
