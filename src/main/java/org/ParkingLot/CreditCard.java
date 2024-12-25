@@ -5,7 +5,6 @@ public class CreditCard implements PaymentStrategy{
     private String cardHolderName;
     private String expirationDate;
 
-    // Constructor to initialize the CreditCard object
     public CreditCard(String cardNumber, String cardHolderName, String expirationDate) {
         this.cardNumber = cardNumber;
         this.cardHolderName = cardHolderName;

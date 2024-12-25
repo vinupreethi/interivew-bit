@@ -46,7 +46,7 @@ public class SearchHomeAndKitchenProducts implements Search {
         Collections.sort(kitchenList, new Comparator<Product>() {
             @Override
             public int compare(Product o1, Product o2) {
-                return o1.getRating() - o2.getRating();
+                return (int) (o1.getRating() - o2.getRating());
             }
         });
         return  kitchenList;
