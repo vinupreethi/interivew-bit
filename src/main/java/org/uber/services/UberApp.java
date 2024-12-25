@@ -1,5 +1,20 @@
 package org.uber.services;
 
+import org.uber.constants.RideStatus;
+import org.uber.exception.DestinationNotWithCityException;
+import org.uber.exception.RentalHourExceededException;
+import org.uber.models.Courier;
+import org.uber.models.Location;
+import org.uber.models.Ride;
+import org.uber.observer.DriverObserver;
+import org.uber.observer.PaymentObserver;
+import org.uber.observer.RiderObserver;
+import org.uber.vehicle.Auto;
+import org.uber.vehicle.Bike;
+import org.uber.vehicle.Cab;
+import org.uber.vehicle.Vehicle;
+import org.uber.observer.Observer;
+
 import java.util.*;
 
 public class UberApp {
@@ -336,7 +351,7 @@ public class UberApp {
         long startTime = System.currentTimeMillis() / 60000;
         long estimatedTime = estimatedTime(distance, startTime);
         Ride ride = new Ride(rider, driver, RideStatus.BOOKED, otp, vehicle, distance, currentLocation, startTime, estimatedTime);
-        Observer driverObserver = new DriverObserver(driver, ride);
+        Observer driverObserver =  new DriverObserver(driver, ride);
         Observer riderObserver = new RiderObserver(driver, ride);
         driverObserver.update(driver, ride);
         riderObserver.update(driver, ride);

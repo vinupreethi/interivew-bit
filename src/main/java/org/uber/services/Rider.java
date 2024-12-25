@@ -1,6 +1,14 @@
 package org.uber.services;
 
 
+import org.uber.models.License;
+import org.uber.models.Location;
+import org.uber.models.Ride;
+import org.uber.vehicle.Auto;
+import org.uber.vehicle.Bike;
+import org.uber.vehicle.Cab;
+import org.uber.vehicle.Vehicle;
+
 import java.util.Scanner;
 
 public class Rider {

@@ -1,5 +1,8 @@
 package org.uber.vehicle;
 
+import org.uber.constants.RideStatus;
+import org.uber.services.Driver;
+
 public class Bike implements Vehicle {
     private static final double FARE = 30;
     private double distance;

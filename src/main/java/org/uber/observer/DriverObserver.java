@@ -1,5 +1,9 @@
 package org.uber.observer;
 
+import org.uber.constants.RideStatus;
+import org.uber.models.Ride;
+import org.uber.services.Driver;
+
 import java.util.Scanner;
 
 public class DriverObserver implements Observer {
