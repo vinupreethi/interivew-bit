@@ -1,6 +1,9 @@
 package org.Ecommerce.payments;
 
 
+import org.Ecommerce.exception.InSufficientBalanceException;
+import org.Ecommerce.models.Account;
+
 import java.util.Scanner;
 
 public class DebitCardService implements PaymentService {
@@ -10,7 +13,7 @@ public class DebitCardService implements PaymentService {
     private Double balance;
     private Account account;
 
-    // Constructor to initialize the CreditCard object
+
     public DebitCardService(String cardNumber, String cardHolderName, String expirationDate) {
         this.cardNumber = cardNumber;
         this.cardHolderName = cardHolderName;
