@@ -1,4 +1,9 @@
-package org.uber;
+package org.uber.models;
+
+import org.uber.constants.RideStatus;
+import org.uber.services.Driver;
+import org.uber.services.Rider;
+import org.uber.vehicle.Vehicle;
 
 import java.util.Scanner;
 
@@ -48,7 +53,7 @@ public class Ride {
         this.location = location;
     }
 
-    public Ride(Rider rider, Driver driver, RideStatus rideStatus, int otp, Vehicle vehicle, double distance, Location location,long startTime, long endTime) {
+    public Ride(Rider rider, Driver driver, RideStatus rideStatus, int otp, Vehicle vehicle, double distance, Location location, long startTime, long endTime) {
         this.rider=rider;
         this.driver=driver;
         this.rideStatus=rideStatus;

@@ -1,11 +1,11 @@
-package org.uber;
+package org.uber.payment;
 
-public class CreditCardPayment implements Payment {
+public class DebitCardPayment implements Payment {
     private String cardNumber;
     private String cardHolderName;
     private String expirationDate;
 
-    public CreditCardPayment(String cardNumber, String cardHolderName, String expirationDate) {
+    public DebitCardPayment(String cardNumber, String cardHolderName, String expirationDate) {
         this.cardNumber = cardNumber;
         this.cardHolderName = cardHolderName;
         this.expirationDate = expirationDate;

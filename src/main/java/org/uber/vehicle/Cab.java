@@ -1,11 +1,11 @@
-package org.uber;
+package org.uber.vehicle;
 
-public class Bike implements Vehicle {
-    private static final double FARE = 30;
+public class Cab implements Vehicle {
+    private static final double FARE = 40;
     private double distance;
     private RideStatus rideStatus;
     private Driver driver;
-    public Bike() {
+    public Cab() {
 
     }
 
@@ -16,8 +16,6 @@ public class Bike implements Vehicle {
     public void setDistance(double distance) {
         this.distance = distance;
     }
-
-
 
     @Override
     public double cost(double distance) {

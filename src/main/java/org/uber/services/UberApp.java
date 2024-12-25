@@ -1,6 +1,4 @@
-package org.uber;
-
-import java.text.ParseException;
+package org.uber.services;
 
 import java.util.*;
 
@@ -32,7 +30,7 @@ public class UberApp {
     }
 
     public void setAvailableCabs(Map<Date, Vehicle> availableVehicle) {
-        this.availableVehicle =availableVehicle;
+        this.availableVehicle = availableVehicle;
     }
 
     public Map<String, List<Driver>> getListOfdriver() {
@@ -269,7 +267,7 @@ public class UberApp {
         driver.deliveredCourier(driver, courier, destination);
     }
 
-    public void hourlyRental(Rider rider) {
+    public void hourlyRental(Rider rider) throws RentalHourExceededException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Select package");
         System.out.println("Enter the number of hours");
@@ -298,11 +296,15 @@ public class UberApp {
         long endtime = hour + startTime;
         vehicle1.setRideStatus(RideStatus.ONGOING);
         Ride ride = new Ride(rider, RideStatus.BOOKED, vehicle, kilometer, currentLocation, startTime, endtime);
-        startRide(startTime,endtime,ride);
-        Observer driverObserver = new DriverObserver(vehicle1.getDriver(), ride);
-        Observer paymentObserver = new PaymentObserver(vehicle1.getDriver(), ride);
-        driverObserver.update(vehicle1.getDriver(), ride);
-        paymentObserver.update(vehicle1.getDriver(), ride);
+        startRide(startTime, endtime, ride);
+        if (ride.getRideStatus().equals(RideStatus.COMPLETED)) {
+            Observer driverObserver = new DriverObserver(vehicle1.getDriver(), ride);
+            Observer paymentObserver = new PaymentObserver(vehicle1.getDriver(), ride);
+            driverObserver.update(vehicle1.getDriver(), ride);
+            paymentObserver.update(vehicle1.getDriver(), ride);
+        } else {
+            throw new RentalHourExceededException("Rental hour is getting exceeded..!");
+        }
 
     }
 
@@ -310,13 +312,12 @@ public class UberApp {
         long time = System.currentTimeMillis();
         while (time != endtime) {
             ride.setRideStatus(RideStatus.ONGOING);
-            time = System.currentTimeMillis()/60000;
+            time = System.currentTimeMillis() / 60000;
         }
-        if(time == endtime)
+        if (time == endtime)
             ride.setRideStatus(RideStatus.COMPLETED);
 
     }
-
 
 
     public void outStationTrips(Rider rider) {

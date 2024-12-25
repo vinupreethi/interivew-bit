@@ -1,4 +1,4 @@
-package org.uber;
+package org.uber.vehicle;
 
 public class Auto implements Vehicle {
     private static final double FARE = 20;

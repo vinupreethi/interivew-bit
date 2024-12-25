@@ -1,4 +1,13 @@
-package org.uber;
+package org.uber.observer;
+
+import org.uber.*;
+import org.uber.constants.RideStatus;
+import org.uber.models.Ride;
+import org.uber.payment.CreditCardPayment;
+import org.uber.payment.DebitCardPayment;
+import org.uber.payment.Payment;
+import org.uber.payment.UpiPayment;
+import org.uber.services.Driver;
 
 import java.util.Scanner;
 

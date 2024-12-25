@@ -1,4 +1,4 @@
-package org.uber;
+package org.uber.exception;
 
 public class DestinationNotWithCityException extends Throwable {
     public DestinationNotWithCityException(String destinationNotWithCityException) {

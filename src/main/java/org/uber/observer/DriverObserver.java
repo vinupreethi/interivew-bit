@@ -1,4 +1,4 @@
-package org.uber;
+package org.uber.observer;
 
 import java.util.Scanner;
 

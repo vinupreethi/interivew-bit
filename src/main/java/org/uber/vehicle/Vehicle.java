@@ -1,4 +1,7 @@
-package org.uber;
+package org.uber.vehicle;
+
+import org.uber.constants.RideStatus;
+import org.uber.services.Driver;
 
 public interface Vehicle {
 

@@ -1,4 +1,4 @@
-package org.uber;
+package org.uber.services;
 
 import java.util.Date;
 import java.util.Scanner;
@@ -165,10 +165,7 @@ public class Driver {
         return false;
 
     }
-//    public boolean isAvailableForTrip(Driver driver, String time, Date date)
-//    {
-//
-//    }
+
 
     public void deliveredCourier(Driver driver, Courier courier,Location destination) {
         if(driver.getLocation()==destination)

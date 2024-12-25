@@ -1,4 +1,4 @@
-package org.uber;
+package org.uber.services;
 
 
 import java.util.Scanner;

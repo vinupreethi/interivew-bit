@@ -1,4 +1,4 @@
-package org.uber;
+package org.uber.models;
 
 public class Location {
     private double latitude;

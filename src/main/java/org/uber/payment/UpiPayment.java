@@ -1,4 +1,4 @@
-package org.uber;
+package org.uber.payment;
 
 public class UpiPayment implements Payment {
     private String upiId;
