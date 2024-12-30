@@ -1,0 +1,4 @@
+Structural design patterns are concerned with the composition of classes or objects.
+These patterns deal with how objects and classes are organized and composed to form larger structures.
+They aim to simplify the design by creating relationships between objects and classes in a way that allows
+the system to be more flexible and easier to maintain
