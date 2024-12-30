@@ -1,3 +1,4 @@
+/*
 package org.ParkingLot.model;
 
 import org.ParkingLot.constants.VehicleType;
@@ -31,3 +32,4 @@ public class Vehicle {
         this.vehicleColor = vehicleColor;
     }
 }
+*/

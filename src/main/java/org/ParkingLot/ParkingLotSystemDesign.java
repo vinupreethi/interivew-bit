@@ -1,3 +1,4 @@
+/*
 
 package org.ParkingLot;
 
@@ -16,9 +17,11 @@ public class ParkingLotSystemDesign {
         List<ExitPanel> exitPanelList = new ArrayList<>();
         Map<ParkingFloor, List<ParkingSpot>> parkingFloorListMap = new HashMap<>();
         List<ParkingFloor> parkingFloorList = new ArrayList<>();
-        Admin admin=new Admin();
+       // parkingFloorList.add(new ParkingFloor());
+
 
 
     }
 }
 
+*/

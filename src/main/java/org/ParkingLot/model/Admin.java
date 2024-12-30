@@ -1,8 +1,12 @@
+/*
 package org.ParkingLot.model;
+
+import org.ParkingLot.constants.SpotSize;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Admin {
     String username;
@@ -13,7 +17,7 @@ public class Admin {
     List<ParkingFloor> parkingFloorList;
     List<ParkingSpot> vacantList = new ArrayList<>();
     HashMap<Vehicle, ParkingFloor> mappingVehicle = new HashMap<>();
-
+    HashMap<ParkingFloor, SpotSize> parkingFloorSpotHashMap=new HashMap<>();
     public Admin() {
 
     }
@@ -61,5 +65,5 @@ public class Admin {
 
 
 
-
 }
+*/

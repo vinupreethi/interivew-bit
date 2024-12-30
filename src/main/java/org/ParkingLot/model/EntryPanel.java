@@ -1,3 +1,4 @@
+/*
 package org.ParkingLot.model;
 
 import org.ParkingLot.*;
@@ -26,3 +27,4 @@ public class EntryPanel {
         this.customer = customer;
     }
 }
+*/

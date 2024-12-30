@@ -1,14 +1,22 @@
+/*
 package org.ParkingLot.model;
 
 import org.ParkingLot.constants.ParkingStatus;
 import org.ParkingLot.constants.SpotSize;
+import org.ParkingLotWithDesign.constants.ParkingSpotSize;
 
 public class ParkingSpot {
     int number;
-    SpotSize spotSize;
+    ParkingSpotSize spotSize;
     Vehicle vehicle;
     VehicleTicket ticket;
     ParkingStatus parkingStatus;
+
+    public ParkingSpot(int number, ParkingSpotSize spotSize, ParkingStatus parkingStatus) {
+        this.number = number;
+        this.spotSize = spotSize;
+        this.parkingStatus = parkingStatus;
+    }
 
     public int getNumber() {
         return number;
@@ -18,11 +26,11 @@ public class ParkingSpot {
         this.number = number;
     }
 
-    public SpotSize getSpotSize() {
+    public ParkingSpotSize getSpotSize() {
         return spotSize;
     }
 
-    public void setSpotSize(SpotSize spotSize) {
+    public void setSpotSize(ParkingSpotSize spotSize) {
         this.spotSize = spotSize;
     }
 
@@ -50,3 +58,4 @@ public class ParkingSpot {
         this.parkingStatus = parkingStatus;
     }
 }
+*/

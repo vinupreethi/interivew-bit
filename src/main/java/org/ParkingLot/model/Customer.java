@@ -1,3 +1,4 @@
+/*
 package org.ParkingLot.model;
 
 import org.ParkingLot.constants.ParkingStatus;
@@ -22,7 +23,7 @@ public class Customer {
 
     public void payFare(double amount) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Choose the Payment Mode");
+        System.out.println("Choose the PaymentStrategy.java Mode");
         String payment = scanner.next();
         if (payment.equals("CREDIT CARD")) {
             paymentStrategy = new CreditCard("5211-2314-1234-1212", "Vinothini", "01/11/2027");
@@ -40,3 +41,4 @@ public class Customer {
         vacantparkingSpot.parkingStatus = ParkingStatus.OCCUPIED;
     }
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package org.ParkingLot.model;
 
 public class VehicleTicket {
@@ -49,3 +50,4 @@ public class VehicleTicket {
 
     }
 }
+*/

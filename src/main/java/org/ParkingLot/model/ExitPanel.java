@@ -1,3 +1,4 @@
+/*
 package org.ParkingLot.model;
 
 public class ExitPanel {
@@ -20,3 +21,4 @@ public class ExitPanel {
         this.customer = customer;
     }
 }
+*/

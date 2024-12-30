@@ -1,6 +1,6 @@
 package org.uber.observer;
 
-import org.uber.*;
+
 import org.uber.constants.RideStatus;
 import org.uber.models.Ride;
 import org.uber.payment.CreditCardPayment;
@@ -25,7 +25,7 @@ public class PaymentObserver implements Observer {
     public void update(Driver driver, Ride ride) {
         if (ride.getRideStatus().equals(RideStatus.COMPLETED)) {
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Choose the Payment Mode");
+            System.out.println("Choose the PaymentStrategy.java Mode");
             String paymentMode = scanner.next();
             if (paymentMode.equals("CREDIT CARD")) {
                 payment = new CreditCardPayment("5211-2314-1234-1212", "Vinothini", "01/11/2027");

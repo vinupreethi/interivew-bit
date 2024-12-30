@@ -1,3 +1,4 @@
+/*
 package org.ParkingLot.payment;
 
 public class UPIPayment implements PaymentStrategy {
@@ -12,3 +13,4 @@ public class UPIPayment implements PaymentStrategy {
         System.out.println("Paid " + amount + " using Credit Card.");
     }
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package org.ParkingLot.service;
 
 import org.ParkingLot.constants.VehicleType;
@@ -24,3 +25,4 @@ public class ExitPanelService {
         customer.payFare(amount);
     }
 }
+*/

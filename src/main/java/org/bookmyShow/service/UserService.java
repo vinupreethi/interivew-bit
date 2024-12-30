@@ -75,7 +75,7 @@ public class UserService {
         if (isTransactionSuccessFull(show,user)) {
             seat.setSeatType(SeatType.BOOKED);
             Ticket ticket = bookMyShowAppService.generateTicket(screen, show, seat);
-            System.out.println("Payment is successful and Seat is booked.. !"+ ticket);
+            System.out.println("PaymentStrategy.java is successful and Seat is booked.. !"+ ticket);
         } else {
             System.out.println("Ticket is not booked.. Refund wil be initiated to the wallet");
         }

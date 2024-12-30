@@ -1,3 +1,4 @@
+/*
 package org.ParkingLot.service;
 
 import org.ParkingLot.constants.ParkingStatus;
@@ -18,17 +19,17 @@ public class AdminService {
         HashMap<Vehicle, ParkingFloor> mappingVehicle = new HashMap<>();
         for (ParkingFloor parkingFloor : admin.getParkingFloorList()) {
             List<ParkingSpot> parkingSpotList = parkingFloor.getParkingSpotList();
-            for (ParkingSpot parkingSpot : parkingSpotList) {
-                if (parkingSpot.getParkingStatus() == ParkingStatus.AVAILABLE) {
-                    if (vehicle.getVehicleType() == VehicleType.CAR && parkingSpot.getSpotSize() == SpotSize.MEDIUM) {
+            for (ParkingSpot parkingSpot1 : parkingSpotList) {
+                if (parkingSpot1.getParkingStatus() == ParkingStatus.AVAILABLE) {
+                    if (vehicle.getVehicleType() == VehicleType.CAR && parkingSpot1.getSpotSize() == SpotSize.MEDIUM) {
                         mappingVehicle.put(vehicle, parkingFloor);
-                        admin.setParkingSpot(parkingSpot);
-                    } else if (vehicle.getVehicleType() == VehicleType.BIKE && parkingSpot.getSpotSize() == SpotSize.SMALL) {
+                        admin.setParkingSpot(parkingSpot1);
+                    } else if (vehicle.getVehicleType() == VehicleType.BIKE && parkingSpot1.getSpotSize() == SpotSize.SMALL) {
                         mappingVehicle.put(vehicle, parkingFloor);
-                        admin.setParkingSpot(parkingSpot);
-                    } else if (vehicle.getVehicleType() == VehicleType.TRUCK && parkingSpot.getSpotSize() == SpotSize.LARGE) {
+                        admin.setParkingSpot(parkingSpot1);
+                    } else if (vehicle.getVehicleType() == VehicleType.TRUCK && parkingSpot1.getSpotSize() == SpotSize.LARGE) {
                         mappingVehicle.put(vehicle, parkingFloor);
-                        admin.setParkingSpot(parkingSpot);
+                        admin.setParkingSpot(parkingSpot1);
                     }
                 }
             }
@@ -66,3 +67,4 @@ public class AdminService {
 
 
 }
+*/

@@ -1,7 +1,9 @@
+/*
 package org.ParkingLot.service;
 
 import org.ParkingLot.exception.ParkingLotFullException;
 import org.ParkingLot.model.*;
+import org.ParkingLotWithDesign.service.AdminService;
 
 import java.util.HashMap;
 import java.util.List;
@@ -13,7 +15,7 @@ public class EntryPanelService {
     Admin admin;
 
     public void DisplayBoard() throws ParkingLotFullException {
-        Map<ParkingFloor, List<ParkingSpot>> vacantList = adminservice.VacantList();
+        Map<ParkingFloor, List<ParkingSpot>> vacantList = adminservice.vacantList();
         if (vacantList == null || vacantList.isEmpty()) {
             throw new ParkingLotFullException("Parking lot is full");
         } else {
@@ -35,3 +37,4 @@ public class EntryPanelService {
         customer.payFare(amount);
     }
 }
+*/
