@@ -1,18 +1,18 @@
 package org.UberSystemDesign.UberPaymentStrategy;
 
-import org.ParkingLotWithDesign.Strategy.PaymentStrategy;
+
 
 public class PaymentContextImpl implements PaymentContext {
 
-    PaymentStrategy paymentStrategy;
+    UberPaymentStrategy paymentStrategy;
 
-    public PaymentContextImpl(PaymentStrategy paymentStrategy) {
+    public PaymentContextImpl(UberPaymentStrategy paymentStrategy) {
         this.paymentStrategy = paymentStrategy;
     }
 
 
     @Override
     public double completeThePayment(double amount) {
-        return paymentStrategy.pay(amount);
+        return paymentStrategy.payment(amount);
     }
 }

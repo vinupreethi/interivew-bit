@@ -1,10 +1,12 @@
 package org.UberSystemDesign.UberPaymentStrategy;
 
-import org.ParkingLotWithDesign.Strategy.PaymentStrategy;
 
-public class DebitCardPaymentStrategy implements PaymentStrategy {
+
+public class DebitCardPaymentStrategy implements UberPaymentStrategy{
+
+
     @Override
-    public double pay(double amount) {
+    public double payment(double amount) {
         System.out.println("Paid through debit card");
         return amount;
     }

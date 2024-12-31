@@ -1,10 +1,11 @@
 package org.UberSystemDesign.StateOfRide;
 
 
-import org.ParkingLotWithDesign.Strategy.GooglePaymentStrategy;
-import org.ParkingLotWithDesign.Strategy.PaymentStrategy;
+
+import org.UberSystemDesign.UberPaymentStrategy.GooglePaymentStrategy;
 import org.UberSystemDesign.UberPaymentStrategy.PaymentContext;
 import org.UberSystemDesign.UberPaymentStrategy.PaymentContextImpl;
+import org.UberSystemDesign.UberPaymentStrategy.UberPaymentStrategy;
 import org.UberSystemDesign.VehicleFactory.Vehicle;
 import org.UberSystemDesign.model.Driver;
 import org.UberSystemDesign.model.Location;
@@ -38,7 +39,7 @@ public class CompletedRide implements RideState {
         Driver driver = completedRide.getDriver();
         uberApp.notifyObserver(driver,completedRide);
         uberApp.notifyObserver(rider,completedRide);
-        PaymentStrategy paymentStrategy = new GooglePaymentStrategy();
+        UberPaymentStrategy paymentStrategy = new GooglePaymentStrategy();
         PaymentContext paymentContext = new PaymentContextImpl(paymentStrategy);
         paymentContext.completeThePayment(completedRide.getEstimatedAmount());
     }

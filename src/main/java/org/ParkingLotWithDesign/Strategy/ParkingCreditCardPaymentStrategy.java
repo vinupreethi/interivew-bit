@@ -1,6 +1,6 @@
 package org.ParkingLotWithDesign.Strategy;
 
-public class CreditCardPaymentStrategy implements PaymentStrategy {
+public class ParkingCreditCardPaymentStrategy implements ParkingPaymentStrategy {
 
     @Override
     public void pay(double amount) {
