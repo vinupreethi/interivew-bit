@@ -1,7 +1,5 @@
 package org.UberSystemDesign.model;
 
-import org.ParkingLotWithDesign.Strategy.GooglePaymentStrategy;
-import org.ParkingLotWithDesign.Strategy.PaymentStrategy;
 import org.UberSystemDesign.UberPaymentStrategy.PaymentContext;
 import org.UberSystemDesign.UberPaymentStrategy.PaymentContextImpl;
 import org.UberSystemDesign.constants.RideStatus;

@@ -1,9 +1,9 @@
 package org.ParkingLotWithDesign.Strategy;
 
 public class PaymentSelector implements PaymentContext {
-    PaymentStrategy paymentStrategy;
+    ParkingPaymentStrategy paymentStrategy;
 
-    public PaymentSelector(PaymentStrategy paymentStrategy) {
+    public PaymentSelector( ParkingPaymentStrategy paymentStrategy) {
         this.paymentStrategy = paymentStrategy;
     }
 
