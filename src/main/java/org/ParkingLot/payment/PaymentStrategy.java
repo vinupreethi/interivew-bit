@@ -1,5 +1,5 @@
 /*
-package org.ParkingLot.payment;
+package org.ParkingLotSystem.payment;
 
 public interface PaymentStrategy {
 

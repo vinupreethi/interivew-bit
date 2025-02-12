@@ -1,11 +1,11 @@
 /*
-package org.ParkingLot.model;
+package org.ParkingLotSystem.model;
 
-import org.ParkingLot.constants.ParkingStatus;
-import org.ParkingLot.payment.CreditCard;
-import org.ParkingLot.payment.DebitCard;
-import org.ParkingLot.payment.PaymentStrategy;
-import org.ParkingLot.payment.UPIPayment;
+import org.ParkingLotSystem.constants.ParkingStatus;
+import org.ParkingLotSystem.payment.CreditCard;
+import org.ParkingLotSystem.payment.DebitCard;
+import org.ParkingLotSystem.payment.PaymentStrategy;
+import org.ParkingLotSystem.payment.UPIPayment;
 
 import java.util.Scanner;
 
@@ -37,7 +37,7 @@ public class Customer {
     }
 
 
-    public void parkVehicle(ParkingSpot vacantparkingSpot) {
+    public void parkVehicle(ParkingSpotStatus vacantparkingSpot) {
         vacantparkingSpot.parkingStatus = ParkingStatus.OCCUPIED;
     }
 }

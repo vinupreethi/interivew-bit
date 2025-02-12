@@ -52,7 +52,7 @@ public class TokenBucketTest {
         int request = scanner.nextInt();
 
 
-        for (int i = 0; i < request; i++) {
+        for (int i = 0; i < 20; i++) {
             System.out.println("Request " + (i + 1) + " trying to consume 1 token...");
 
             if (tokenBucketTest.isTokenAvailableToConsume(1)) {
@@ -62,7 +62,7 @@ public class TokenBucketTest {
                 System.out.println("Request " + (i + 1) + " Denied. ");
             }
 
-            Thread.sleep(90000);
+            Thread.sleep(99);
 
         }
 

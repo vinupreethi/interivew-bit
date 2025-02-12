@@ -1,7 +1,7 @@
 /*
-package org.ParkingLot.model;
+package org.ParkingLotSystem.model;
 
-import org.ParkingLot.constants.VehicleType;
+import org.ParkingLotSystem.constants.VehicleType;
 
 public class Vehicle {
     VehicleType vehicleType;

@@ -1,18 +1,18 @@
 /*
-package org.ParkingLot.model;
+package org.ParkingLotSystem.model;
 
-import org.ParkingLot.constants.ParkingStatus;
-import org.ParkingLot.constants.SpotSize;
+import org.ParkingLotSystem.constants.ParkingStatus;
+import org.ParkingLotSystem.constants.SpotSize;
 import org.ParkingLotWithDesign.constants.ParkingSpotSize;
 
-public class ParkingSpot {
+public class ParkingSpotStatus {
     int number;
     ParkingSpotSize spotSize;
     Vehicle vehicle;
     VehicleTicket ticket;
     ParkingStatus parkingStatus;
 
-    public ParkingSpot(int number, ParkingSpotSize spotSize, ParkingStatus parkingStatus) {
+    public ParkingSpotStatus(int number, ParkingSpotSize spotSize, ParkingStatus parkingStatus) {
         this.number = number;
         this.spotSize = spotSize;
         this.parkingStatus = parkingStatus;

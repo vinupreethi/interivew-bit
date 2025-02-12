@@ -1,13 +1,13 @@
 /*
-package org.ParkingLot.model;
+package org.ParkingLotSystem.model;
 
 public class VehicleTicket {
     long inTime;
     Vehicle vehicle;
     ParkingFloor parkingFloor;
-    ParkingSpot parkingSpot;
+    ParkingSpotStatus parkingSpot;
 
-    public VehicleTicket(long inTime, Vehicle vehicle, ParkingFloor parkingFloor, ParkingSpot parkingSpot) {
+    public VehicleTicket(long inTime, Vehicle vehicle, ParkingFloor parkingFloor, ParkingSpotStatus parkingSpot) {
         this.inTime = inTime;
         this.vehicle = vehicle;
         this.parkingFloor = parkingFloor;
@@ -22,11 +22,11 @@ public class VehicleTicket {
         this.parkingFloor = parkingFloor;
     }
 
-    public ParkingSpot getParkingSpot() {
+    public ParkingSpotStatus getParkingSpot() {
         return parkingSpot;
     }
 
-    public void setParkingSpot(ParkingSpot parkingSpot) {
+    public void setParkingSpot(ParkingSpotStatus parkingSpot) {
         this.parkingSpot = parkingSpot;
     }
 

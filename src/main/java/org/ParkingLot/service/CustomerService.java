@@ -1,12 +1,12 @@
 /*
-package org.ParkingLot.service;
+package org.ParkingLotSystem.service;
 
-import org.ParkingLot.constants.ParkingStatus;
-import org.ParkingLot.model.ParkingSpot;
-import org.ParkingLot.payment.CreditCard;
-import org.ParkingLot.payment.DebitCard;
-import org.ParkingLot.payment.PaymentStrategy;
-import org.ParkingLot.payment.UPIPayment;
+import org.ParkingLotSystem.constants.ParkingStatus;
+import org.ParkingLotSystem.model.ParkingSpotStatus;
+import org.ParkingLotSystem.payment.CreditCard;
+import org.ParkingLotSystem.payment.DebitCard;
+import org.ParkingLotSystem.payment.PaymentStrategy;
+import org.ParkingLotSystem.payment.UPIPayment;
 
 import java.util.Scanner;
 
@@ -28,7 +28,7 @@ public class CustomerService {
     }
 
 
-    public void parkVehicle(ParkingSpot vacantparkingSpot) {
+    public void parkVehicle(ParkingSpotStatus vacantparkingSpot) {
         vacantparkingSpot.setParkingStatus(ParkingStatus.OCCUPIED);
     }
 }

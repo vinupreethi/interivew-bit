@@ -1,7 +1,7 @@
 /*
-package org.ParkingLot.model;
+package org.ParkingLotSystem.model;
 
-import org.ParkingLot.*;
+import org.ParkingLotSystem.*;
 
 import java.util.HashMap;
 import java.util.List;

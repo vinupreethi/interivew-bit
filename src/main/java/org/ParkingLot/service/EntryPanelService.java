@@ -1,8 +1,8 @@
 /*
-package org.ParkingLot.service;
+package org.ParkingLotSystem.service;
 
-import org.ParkingLot.exception.ParkingLotFullException;
-import org.ParkingLot.model.*;
+import org.ParkingLotSystem.exception.ParkingLotFullException;
+import org.ParkingLotSystem.model.*;
 import org.ParkingLotWithDesign.service.AdminService;
 
 import java.util.HashMap;
@@ -15,11 +15,11 @@ public class EntryPanelService {
     Admin admin;
 
     public void DisplayBoard() throws ParkingLotFullException {
-        Map<ParkingFloor, List<ParkingSpot>> vacantList = adminservice.vacantList();
+        Map<ParkingFloor, List<ParkingSpotStatus>> vacantList = adminservice.vacantList();
         if (vacantList == null || vacantList.isEmpty()) {
             throw new ParkingLotFullException("Parking lot is full");
         } else {
-            for (Map.Entry<ParkingFloor, List<ParkingSpot>> parkingFloorListEntry : vacantList.entrySet()) {
+            for (Map.Entry<ParkingFloor, List<ParkingSpotStatus>> parkingFloorListEntry : vacantList.entrySet()) {
                 System.out.println(parkingFloorListEntry.getKey() + " " + parkingFloorListEntry.getValue());
             }
         }
@@ -27,7 +27,7 @@ public class EntryPanelService {
 
     public void generateTicket(Vehicle vehicle) {
         HashMap<Vehicle, ParkingFloor> vehicleSpot = adminservice.checkSpaceForVehicle(vehicle);
-        ParkingSpot vacantparkingSpot = admin.getParkingSpot();
+        ParkingSpotStatus vacantparkingSpot = admin.getParkingSpot();
         VehicleTicket vehicleTicket = new VehicleTicket(System.currentTimeMillis() / 3600, vehicle, vehicleSpot.get(vehicle), vacantparkingSpot);
         System.out.println("Ticket has been generated " + vehicleTicket);
         customer.parkVehicle(vacantparkingSpot);

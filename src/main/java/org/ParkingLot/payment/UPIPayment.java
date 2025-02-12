@@ -1,5 +1,5 @@
 /*
-package org.ParkingLot.payment;
+package org.ParkingLotSystem.payment;
 
 public class UPIPayment implements PaymentStrategy {
     private String upiId;

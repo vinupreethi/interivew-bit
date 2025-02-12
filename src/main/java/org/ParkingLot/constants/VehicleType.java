@@ -1,5 +1,5 @@
 /*
-package org.ParkingLot.constants;
+package org.ParkingLotSystem.constants;
 
 public enum VehicleType {
     BIKE,CAR,TRUCK;

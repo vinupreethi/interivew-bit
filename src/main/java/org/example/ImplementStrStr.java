@@ -2,12 +2,13 @@ package org.example;
 
 public class ImplementStrStr {
     public static void main(String args[]) {
-        String string = "strstr";
-        String pattern = "str";
+        String string = "aaaabbbb";
+        String pattern = "aabb";
 
         int lps[] = new int[pattern.length()];
         int len = 0;
         int start = 1;
+        lps[0]=0;
         while (start < pattern.length()) {
             if (pattern.charAt(start) == pattern.charAt(len)) {
                 lps[start] = len + 1;
@@ -23,7 +24,7 @@ public class ImplementStrStr {
             }
         }
         len=0;
-        start=1;
+        start=0;
         while (start < string.length()) {
             if (pattern.charAt(len) == string.charAt(start)) {
                 len++;

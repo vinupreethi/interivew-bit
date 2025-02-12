@@ -1,5 +1,5 @@
 /*
-package org.ParkingLot.model;
+package org.ParkingLotSystem.model;
 
 public class ExitPanel {
     Admin admin;

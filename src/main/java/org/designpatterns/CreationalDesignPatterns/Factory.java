@@ -20,6 +20,11 @@ class DonkeyToy implements Product {
 
 abstract class ProductFactory {
     abstract Product createNewProduct();
+    public final void hello()
+    {
+        System.out.println("Hello");
+    }
+
 }
 
  class MonkeyFactory extends ProductFactory {

@@ -1,10 +1,10 @@
 /*
-package org.ParkingLot.service;
+package org.ParkingLotSystem.service;
 
-import org.ParkingLot.constants.ParkingStatus;
-import org.ParkingLot.constants.SpotSize;
-import org.ParkingLot.constants.VehicleType;
-import org.ParkingLot.model.*;
+import org.ParkingLotSystem.constants.ParkingStatus;
+import org.ParkingLotSystem.constants.SpotSize;
+import org.ParkingLotSystem.constants.VehicleType;
+import org.ParkingLotSystem.model.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -18,8 +18,8 @@ public class AdminService {
     public HashMap<Vehicle, ParkingFloor> checkSpaceForVehicle(Vehicle vehicle) {
         HashMap<Vehicle, ParkingFloor> mappingVehicle = new HashMap<>();
         for (ParkingFloor parkingFloor : admin.getParkingFloorList()) {
-            List<ParkingSpot> parkingSpotList = parkingFloor.getParkingSpotList();
-            for (ParkingSpot parkingSpot1 : parkingSpotList) {
+            List<ParkingSpotStatus> parkingSpotList = parkingFloor.getParkingSpotList();
+            for (ParkingSpotStatus parkingSpot1 : parkingSpotList) {
                 if (parkingSpot1.getParkingStatus() == ParkingStatus.AVAILABLE) {
                     if (vehicle.getVehicleType() == VehicleType.CAR && parkingSpot1.getSpotSize() == SpotSize.MEDIUM) {
                         mappingVehicle.put(vehicle, parkingFloor);
@@ -41,18 +41,18 @@ public class AdminService {
     public void removeAllocatedSpace(VehicleTicket ticket) {
         double amount = exitPanel.calculateFare(ticket);
         exitPanel.payFare(amount);
-        ParkingSpot parkingSpot = ticket.getParkingSpot();
+        ParkingSpotStatus parkingSpot = ticket.getParkingSpot();
         parkingSpot.setParkingStatus(ParkingStatus.AVAILABLE);
 
     }
 
-    public Map<ParkingFloor, List<ParkingSpot>> VacantList() {
-        List<ParkingSpot> vacantList = admin.getVacantList();
-        Map<ParkingFloor, List<ParkingSpot>> parkingFloorListMap = new HashMap<>();
+    public Map<ParkingFloor, List<ParkingSpotStatus>> VacantList() {
+        List<ParkingSpotStatus> vacantList = admin.getVacantList();
+        Map<ParkingFloor, List<ParkingSpotStatus>> parkingFloorListMap = new HashMap<>();
         for (ParkingFloor parkingFloor : admin.getParkingFloorList()) {
 
-            List<ParkingSpot> parkingSpotList = parkingFloor.getParkingSpotList();
-            for (ParkingSpot parkingSpot : parkingSpotList) {
+            List<ParkingSpotStatus> parkingSpotList = parkingFloor.getParkingSpotList();
+            for (ParkingSpotStatus parkingSpot : parkingSpotList) {
                 if (parkingSpot.getParkingStatus() == ParkingStatus.AVAILABLE) {
                     vacantList.add(parkingSpot);
                 }

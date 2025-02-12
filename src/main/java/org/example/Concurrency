@@ -1,0 +1,155 @@
+Executor is an interface that represents an object that executes provided tasks.
+The Executor framework in Java is a higher-level replacement for managing threads manually. Instead of directly creating and managing threads using Thread or Runnable, the Executor framework provides a more flexible and powerful approach for handling thread execution, especially for managing large numbers of tasks.
+
+Here is that Executor does not strictly require the task execution to be asynchronous. In the simplest case, an executor can invoke the submitted task instantly in the invoking thread.
+
+ExecutorService:
+----------------
+ExecutorService is a complete solution for asynchronous processing. It manages an in-memory queue and schedules submitted tasks based on thread availability.
+
+The ExecutorService provides a more complete framework for managing tasks and thread pools. It allows submitting both Runnable and Callable tasks, handling tasks asynchronously, and retrieving the results of these tasks.
+
+public interface ExecutorService extends Executor {
+    <T> Future<T> submit(Callable<T> task);
+    <T> Future<T> submit(Runnable task, T result);
+    <T> Future<T> submit(Runnable task);
+    void shutdown();
+    List<Runnable> shutdownNow();
+}
+
+
+
+submit(Callable task): Accepts a Callable task and returns a Future that allows retrieving the result of the computation.
+submit(Runnable task): Accepts a Runnable task and returns a Future (which will always be null since Runnable doesn't return a result).
+shutdown(): Initiates an orderly shutdown where previously submitted tasks are executed, but no new tasks will be accepted.
+shutdownNow(): Attempts to stop all actively executing tasks, halts the processing of waiting tasks, and returns the list of the tasks that were waiting to be executed.
+
+
+
+1. FixedThreadPool
+A FixedThreadPool has a fixed number of threads and is ideal when you want to limit the number of concurrent threads. If there are more tasks than the available threads, the tasks will wait in a queue.
+
+
+2. CachedThreadPool
+A CachedThreadPool dynamically creates new threads as needed but will reuse previously created threads when they become available. It is suitable for applications with many short-lived asynchronous tasks.
+
+3. SingleThreadExecutor
+A SingleThreadExecutor ensures that tasks are processed sequentially by a single thread. It is useful when you need to maintain the order of task execution or when you have tasks that must not run concurrently.
+
+
+4. ScheduledThreadPoolExecutor
+A ScheduledThreadPoolExecutor can be used to schedule tasks with fixed-rate or fixed-delay execution policies.
+
+
+Future is used to represent the result of an asynchronous operation. It comes with methods for checking if the asynchronous operation is completed or not, getting the computed result, etc.
+
+
+CountDownLatch:
+----------------
+CountDownLatch is a concurrency utility class provided in the java.util.concurrent package that allows one or more threads to wait for a set of events to occur. It is often used to block the execution of a thread until a certain number of events or conditions are met, allowing for better coordination between threads.
+
+The primary purpose of CountDownLatch is to synchronize threads so that they can wait for one or more tasks to complete before proceeding.
+
+CountDownLatch: Used for one-time events where threads wait for a specific number of events to occur, after which they are released. Once the count reaches zero, it cannot be reset.
+
+
+CyclicBarrier:
+----------------
+
+ Allows threads to wait for each other at a common barrier point. It can be reused for multiple phases (i.e., the count can be reset).
+
+
+
+Semaphore:
+----------------
+The Semaphore is used for blocking thread level access to some part of the physical or logical resource. A semaphore contains a set of permits; whenever a thread tries to enter the critical section, it needs to check the semaphore if a permit is available or not.
+
+If a permit is not available (via tryAcquire()), the thread is not allowed to jump into the critical section; however, if the permit is available the access is granted, and the permit counter decreases.
+
+blocking QUEUE:
+--------------
+Producer consumer problem
+
+ArrayBlockingQueue: A bounded blocking queue backed by an array.
+LinkedBlockingQueue: A potentially unbounded queue backed by linked nodes (can also be bounded).
+PriorityBlockingQueue: A priority queue implementation that orders elements based on their natural ordering or by a provided comparator.
+SynchronousQueue: A special kind of blocking queue where each insert operation must wait for a corresponding remove operation by another thread.
+
+DelayQueue in Java:
+
+The DelayQueue is a specialized implementation of the BlockingQueue interface that holds elements until they become available for processing, based on a specified delay time. It is part of the java.util.concurrent package and is often used for scenarios where you need to schedule tasks or events to be executed at a later time.
+
+
+Locks:
+--------
+In Java, intrinsic locks (also called monitor locks) are a fundamental part of concurrency control. They are used to synchronize access to shared resources among multiple threads, ensuring thread safety. The synchronized keyword is used to acquire and release these locks
+
+Java provides monitor locks (or intrinsic locks) associated with every object. These locks are used implicitly with the synchronized keyword in Java.
+
+1. Intrinsic Locks (Monitor Locks)
+------------------------------------
+Java provides monitor locks (or intrinsic locks) associated with every object. These locks are used implicitly with the synchronized keyword in Java.
+
+Synchronized Methods
+When you declare a method as synchronized, the object’s intrinsic lock is acquired before the method is executed. Only one thread can execute a synchronized method on the same object at a time.
+
+java
+Copy code
+public synchronized void increment() {
+    counter++;
+}
+Synchronized Blocks
+You can also synchronize a block of code inside a method to limit the scope of the lock, rather than locking the entire method.
+
+java
+Copy code
+public void increment() {
+    synchronized(this) {
+        counter++;
+    }
+}
+The synchronized block allows you to specify which object the lock should be acquired on.
+If you synchronize on the instance (this), only one thread at a time will be able to execute the synchronized block.
+Key Points:
+
+Implicit Locking: When the method or block ends, the lock is automatically released.
+Blocking: If a thread is trying to acquire a lock and another thread already holds it, the first thread will be blocked until the lock is released.
+
+
+Intrinsic Lock (Monitor): Every object in Java has an intrinsic lock (also called a monitor lock). When a thread enters a synchronized block or method, it acquires the intrinsic lock of the object involved. Once it exits, the lock is released, allowing other threads to acquire it.
+
+Critical Section: The synchronized block or method is a critical section where shared resources (variables, objects) are accessed. It ensures that only one thread can execute the critical section at a time for a specific object.
+
+
+ReentrantLocks:
+----------------
+a reentrant lock is a lock that can be acquired multiple times by the same thread without causing a deadlock.
+
+
+Reentrancy:
+-------------
+A thread can acquire the lock multiple times (re-enter it) without getting blocked.
+This is useful in recursive methods or cases where a thread needs to lock a resource multiple times within the same method or call chain.
+Explicit Locking and Unlocking:
+
+ReentrantLock provides methods for explicitly locking and unlocking the resource, unlike the synchronized keyword, which locks implicitly.
+This gives you more control over lock acquisition and release.
+Fairness (Optional):
+
+ReentrantLock allows you to configure whether the lock should be fair or not. In a fair lock, the longest-waiting thread will get the lock next, while in a non-fair lock, the thread that is ready to acquire the lock can do so without regard to the order of waiting threads.
+
+
+ReentrantReadWriteLock
+----------------------
+
+ReentrantReadWriteLock is a lock that allows multiple threads to read the shared data simultaneously but ensures that only one thread can write at a time. It is suitable when you have a scenario where read operations are more frequent than write operations.
+
+
+
+5. Working With Conditions
+-----------------------
+The Condition class provides the ability for a thread to wait for some condition to occur while executing the critical section.
+
+This can occur when a thread acquires the access to the critical section but doesn’t have the necessary condition to perform its operation. For example, a reader thread can get access to the lock of a shared queue that still doesn’t have any data to consume.
+
+Traditionally Java provides wait(), notify() and notifyAll() methods for thread intercommunication.

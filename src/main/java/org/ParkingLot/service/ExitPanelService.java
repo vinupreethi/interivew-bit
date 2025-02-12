@@ -1,9 +1,9 @@
 /*
-package org.ParkingLot.service;
+package org.ParkingLotSystem.service;
 
-import org.ParkingLot.constants.VehicleType;
-import org.ParkingLot.model.Customer;
-import org.ParkingLot.model.VehicleTicket;
+import org.ParkingLotSystem.constants.VehicleType;
+import org.ParkingLotSystem.model.Customer;
+import org.ParkingLotSystem.model.VehicleTicket;
 
 public class ExitPanelService {
     Customer customer;

@@ -1,12 +1,12 @@
 /*
-package org.ParkingLot.model;
+package org.ParkingLotSystem.model;
 
 import java.util.List;
 
 public class ParkingFloor {
     private int floorNo;
 
-    public ParkingFloor(int floorNo, List<ParkingSpot> parkingSpotList) {
+    public ParkingFloor(int floorNo, List<ParkingSpotStatus> parkingSpotList) {
         this.floorNo = floorNo;
         this.parkingSpotList = parkingSpotList;
     }
@@ -19,13 +19,13 @@ public class ParkingFloor {
         this.floorNo = floorNo;
     }
 
-    List<ParkingSpot> parkingSpotList;
+    List<ParkingSpotStatus> parkingSpotList;
 
-    public List<ParkingSpot> getParkingSpotList() {
+    public List<ParkingSpotStatus> getParkingSpotList() {
         return parkingSpotList;
     }
 
-    public void setParkingSpotList(List<ParkingSpot> parkingSpotList) {
+    public void setParkingSpotList(List<ParkingSpotStatus> parkingSpotList) {
         this.parkingSpotList = parkingSpotList;
     }
 }

@@ -1,7 +1,7 @@
 /*
-package org.ParkingLot.model;
+package org.ParkingLotSystem.model;
 
-import org.ParkingLot.constants.SpotSize;
+import org.ParkingLotSystem.constants.SpotSize;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,9 +13,9 @@ public class Admin {
     String phoneNumber;
     String password;
     ExitPanel exitPanel;
-    ParkingSpot parkingSpot;
+    ParkingSpotStatus parkingSpot;
     List<ParkingFloor> parkingFloorList;
-    List<ParkingSpot> vacantList = new ArrayList<>();
+    List<ParkingSpotStatus> vacantList = new ArrayList<>();
     HashMap<Vehicle, ParkingFloor> mappingVehicle = new HashMap<>();
     HashMap<ParkingFloor, SpotSize> parkingFloorSpotHashMap=new HashMap<>();
     public Admin() {
@@ -31,11 +31,11 @@ public class Admin {
         this.exitPanel = exitPanel;
     }
 
-    public ParkingSpot getParkingSpot() {
+    public ParkingSpotStatus getParkingSpot() {
         return parkingSpot;
     }
 
-    public void setParkingSpot(ParkingSpot parkingSpot) {
+    public void setParkingSpot(ParkingSpotStatus parkingSpot) {
         this.parkingSpot = parkingSpot;
     }
 
@@ -47,11 +47,11 @@ public class Admin {
         this.parkingFloorList = parkingFloorList;
     }
 
-    public List<ParkingSpot> getVacantList() {
+    public List<ParkingSpotStatus> getVacantList() {
         return vacantList;
     }
 
-    public void setVacantList(List<ParkingSpot> vacantList) {
+    public void setVacantList(List<ParkingSpotStatus> vacantList) {
         this.vacantList = vacantList;
     }
 

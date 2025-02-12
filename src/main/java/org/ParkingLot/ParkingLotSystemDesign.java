@@ -1,8 +1,8 @@
 /*
 
-package org.ParkingLot;
+package org.ParkingLotSystem;
 
-import org.ParkingLot.model.*;
+import org.ParkingLotSystem.model.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,7 +15,7 @@ public class ParkingLotSystemDesign {
 
         List<EntryPanel> entryPanelList = new ArrayList<>();
         List<ExitPanel> exitPanelList = new ArrayList<>();
-        Map<ParkingFloor, List<ParkingSpot>> parkingFloorListMap = new HashMap<>();
+        Map<ParkingFloor, List<ParkingSpotStatus>> parkingFloorListMap = new HashMap<>();
         List<ParkingFloor> parkingFloorList = new ArrayList<>();
        // parkingFloorList.add(new ParkingFloor());
 

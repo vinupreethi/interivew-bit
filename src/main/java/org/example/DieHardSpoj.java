@@ -28,27 +28,27 @@ public class DieHardSpoj {
                 }
                 else if(toggle==false)
                 {
-                    int health1=health-5;
-                    int armor1=armor-10;
-
-                    int health2=health-20;
-                    int armor2=armor+5;
-
-                    if(armor1<=0)
+//                    int health1=health-5;
+//                    int armor1=armor-10;
+//
+//                    int health2=health-20;
+//                    int armor2=armor+5;
+                    if(health-5>0 && armor-10>0)
                     {
-                        health-=20;
-                        armor+=5;
+                        health=health-5;
+                        armor=armor-10;
                     }
-                    else if(health2<=0)
+                   else if(health-20>0 && armor+5>0)
                     {
-                        health-=5;
-                        armor-=10;
+                        health=health-20;
+                        armor=armor+5;
                     }
-                    toggle=true;
+                   else
+                       break;
+                   toggle=true;
 
                 }
-                if(health<=0 || armor<=0)
-                    break;
+
                 cnt++;
             }
             System.out.println(cnt);
